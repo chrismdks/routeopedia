@@ -4,6 +4,11 @@ import Header from './Header';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import About from './Pages/About';
+import Product from './Pages/Product/Product'
+import ProductDetails from './Pages/Product/ProductDetails'
+import ProductList from './Pages/Product/ProductList'
+import CreateProduct from './Pages/Product/CreateProduct'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,6 +29,11 @@ root.render(
       */}
       <Route path="/" element={<Home/>}></Route>
       <Route path="/about" element={<About/>}></Route>
+
+      <Route path="/product" element={<Product/>}></Route>
+      <Route path="/product/details" element={<ProductDetails/>}></Route>
+      <Route path="/product/list" element={<ProductList/>}></Route>
+      <Route path="/product/create" element={<CreateProduct/>}></Route>
     </Routes>
 
   </BrowserRouter>
