@@ -29,11 +29,12 @@ root.render(
       */}
       <Route path="/" element={<Home/>}></Route>
       <Route path="/about" element={<About/>}></Route>
-
-      <Route path="/product" element={<Product/>}></Route>
-      <Route path="/product/details" element={<ProductDetails/>}></Route>
-      <Route path="/product/list" element={<ProductList/>}></Route>
-      <Route path="/product/create" element={<CreateProduct/>}></Route>
+      <Route path="/product"> {/* it automatically adds a "/" in the end */}
+        <Route path="" element={<Product/>}></Route> {/* instead of path="", we can write index as well */}
+        <Route path="details" element={<ProductDetails/>}></Route>
+        <Route path="list" element={<ProductList/>}></Route>
+        <Route path="create" element={<CreateProduct/>}></Route>
+      </Route>
     </Routes>
 
   </BrowserRouter>
