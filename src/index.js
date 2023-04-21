@@ -8,6 +8,7 @@ import Product from './Pages/Product/Product'
 import ProductDetails from './Pages/Product/ProductDetails'
 import ProductList from './Pages/Product/ProductList'
 import CreateProduct from './Pages/Product/CreateProduct'
+import NotFound from './Pages/NotFound'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -35,6 +36,12 @@ root.render(
         <Route path="list" element={<ProductList/>}></Route>
         <Route path="create" element={<CreateProduct/>}></Route>
       </Route>
+      {/* 
+        path="*" means an invalid path.
+        We add it to the root level (inside Routes) if we want it to work for the entire application.
+        If we want to redirect to another page - and not in NotFound - when we search for an invalid path in a nested component, then we add another one in the nested route.
+      */}
+      <Route path="*" element={<NotFound/>}></Route> 
     </Routes>
 
   </BrowserRouter>
