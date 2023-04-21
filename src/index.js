@@ -47,7 +47,7 @@ root.render(
 
       <Route path="/product"> {/* it automatically adds a "/" in the end */}
         <Route path="" element={<Product/>}></Route> {/* instead of path="", we can write index as well */}
-        <Route path="details" element={<ProductDetails/>}></Route>
+        <Route path="details/:productID" element={<ProductDetails/>}></Route>
         <Route path="list" element={<ProductList/>}></Route>
         <Route path="create" element={<CreateProduct/>}></Route>
       </Route>

@@ -34,7 +34,7 @@ function Header() {
                         </a>
                         <ul className="dropdown-menu">
                         <li><Link className="dropdown-item" to="/product">Product</Link></li>
-                        <li><Link className="dropdown-item" to="/product/details">Product Details</Link></li>
+                        <li><Link className="dropdown-item" to="/product/details/001">Product Details</Link></li>
                         <li><Link className="dropdown-item" to="/product/list">Product List</Link></li>
                         <li><hr className="dropdown-divider"/></li>
                         <li><Link className="dropdown-item" to="/product/create">Create Product</Link></li>
