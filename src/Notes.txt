@@ -1,0 +1,12 @@
+We want to add routing in our application. For that, we will need a nugget package: react router dom
+There are other ways as well, but this is the most common way.
+In this project we will use version: 6.4.3
+https://reactrouter.com/en/main
+Run: npm i react-router-dom@6.4.3
+
+To start using it, we have to do some configurations:
+1.  Go to the root level of your application (index.js) and wrap the entire application using the react router dom (using component BrowserRouter)
+    BrowserRouter component provides a bunch of info to all the other components, related to routing in our application.
+2.  Inside BrowserRouter, use Routes component - after Header.
+3.  Inside Routes, use a Route component for each route.
+    In there define the path -url- of this specific route, and element for the corresponding component.
