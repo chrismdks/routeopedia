@@ -9,6 +9,7 @@ import ProductDetails from './Pages/Product/ProductDetails'
 import ProductList from './Pages/Product/ProductList'
 import CreateProduct from './Pages/Product/CreateProduct'
 import NotFound from './Pages/NotFound'
+import CryptoDetail from './Pages/CryptoDetail'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -30,18 +31,29 @@ root.render(
       */}
       <Route path="/" element={<Home/>}></Route>
       <Route path="/about" element={<About/>}></Route>
+
+      {/* 
+        with ":" react understands that :cryptoSymbol is not part of the route name. 
+        It's a placeholder for a value we will pass
+        We want to use cryptoSymbol and display it in CryptoDetail.jsx : useParams() hook
+        We can use as many parameters as we want. For example: path="/cryptodetail/:cryptoSymbol/:id"
+      */}
+      <Route path="/cryptodetail/:cryptoSymbol" element={<CryptoDetail/>}></Route>
+
       <Route path="/product"> {/* it automatically adds a "/" in the end */}
         <Route path="" element={<Product/>}></Route> {/* instead of path="", we can write index as well */}
         <Route path="details" element={<ProductDetails/>}></Route>
         <Route path="list" element={<ProductList/>}></Route>
         <Route path="create" element={<CreateProduct/>}></Route>
       </Route>
+
       {/* 
         path="*" means an invalid path.
         We add it to the root level (inside Routes) if we want it to work for the entire application.
         If we want to redirect to another page - and not in NotFound - when we search for an invalid path in a nested component, then we add another one in the nested route.
       */}
-      <Route path="*" element={<NotFound/>}></Route> 
+      <Route path="*" element={<NotFound/>}></Route>
+
     </Routes>
 
   </BrowserRouter>
