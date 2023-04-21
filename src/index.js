@@ -39,6 +39,11 @@ root.render(
         We can use as many parameters as we want. For example: path="/cryptodetail/:cryptoSymbol/:id"
       */}
       <Route path="/cryptodetail/:cryptoSymbol" element={<CryptoDetail/>}></Route>
+      {/* 
+        Problem: we are obligated to pass a value for every parameter. Otherwise, it is an invalid path
+        If we want a parameter to be optional, we have to include another Route without the parameter
+      */}
+      <Route path="/cryptodetail" element={<CryptoDetail/>}></Route>
 
       <Route path="/product"> {/* it automatically adds a "/" in the end */}
         <Route path="" element={<Product/>}></Route> {/* instead of path="", we can write index as well */}
